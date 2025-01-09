@@ -1,12 +1,37 @@
 return {
   { "ellisonleao/gruvbox.nvim" },
-
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    keys = {
+      {
+        "<leader>ts",
+        function()
+          vim.cmd("colorscheme tokyonight-storm")
+        end,
+        desc = "colorscheme tokyonight-storm",
+      },
+      {
+        "<leader>tm",
+        function()
+          vim.cmd("colorscheme tokyonight-moon")
+        end,
+        desc = "colorscheme tokyonight-moon",
+      },
+      {
+        "<leader>td",
+        function()
+          vim.cmd("colorscheme tokyonight-day")
+        end,
+        desc = "colorscheme tokyonight-day",
+      },
+    },
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
   },
   {
     "m00qek/baleia.nvim",
