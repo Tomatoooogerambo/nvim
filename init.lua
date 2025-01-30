@@ -17,3 +17,17 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
+require("dap-go").setup({
+  dap_configurations = {
+    {
+      type = "go",
+      name = "Attach remote",
+      mode = "remote",
+      request = "attach",
+    },
+  },
+  delve = {
+    path = vim.fn.exepath("dlv"),
+    port = "2345",
+  },
+})
