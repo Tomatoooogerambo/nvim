@@ -61,7 +61,7 @@ return {
       -- configuration goes here
       lang = "golang",
       cn = { -- leetcode.cn
-        enabled = false, ---@type boolean
+        enabled = true, ---@type boolean
         translator = true, ---@type boolean
         translate_problems = true, ---@type boolean
       },
