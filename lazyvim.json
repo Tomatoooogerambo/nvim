@@ -3,6 +3,8 @@
     "lazyvim.plugins.extras.ai.codeium",
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.test.core"
   ],
   "install_version": 7,
