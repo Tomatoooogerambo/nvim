@@ -7,21 +7,21 @@ return {
     opts = {},
     keys = {
       {
-        "<leader>ts",
+        "<leader>ta",
         function()
           vim.cmd("colorscheme tokyonight-storm")
         end,
         desc = "colorscheme tokyonight-storm",
       },
       {
-        "<leader>tm",
+        "<leader>tb",
         function()
           vim.cmd("colorscheme tokyonight-moon")
         end,
         desc = "colorscheme tokyonight-moon",
       },
       {
-        "<leader>td",
+        "<leader>tc",
         function()
           vim.cmd("colorscheme tokyonight-day")
         end,
