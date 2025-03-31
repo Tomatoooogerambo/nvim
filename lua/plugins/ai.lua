@@ -9,8 +9,8 @@ return {
       -- for example
       provider = "openai",
       openai = {
-        endpoint = "https://api.moonshot.cn/v1",
-        model = "moonshot-v1-32k", -- your desired model (or use gpt-4o, etc.)
+        endpoint = "https://api.hunyuan.cloud.tencent.com/v1",
+        model = "hunyuan-turbo", -- your desired model (or use gpt-4o, etc.)
         timeout = 30000, -- timeout in milliseconds
         temperature = 0, -- adjust if needed
         max_tokens = 4096,
