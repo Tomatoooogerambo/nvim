@@ -9,11 +9,15 @@ return {
       -- for example
       provider = "openai",
       openai = {
-        endpoint = "https://api.hunyuan.cloud.tencent.com/v1",
-        model = "hunyuan-turbo", -- your desired model (or use gpt-4o, etc.)
+        endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        model = "qwen-plus",
+        -- endpoint = "https://api.moonshot.cn/v1",
+        -- model = "moonshot-v1-8k",
+        -- endpoint = "https://api.hunyuan.cloud.tencent.com/v1",
+        -- model = "hunyuan-turbo", -- your desired model (or use gpt-4o, etc.)
         timeout = 30000, -- timeout in milliseconds
         temperature = 0, -- adjust if needed
-        max_tokens = 4096,
+        max_tokens = 8192,
         -- reasoning_effort = "high" -- only supported for reasoning models (o1, etc.)
       },
       file_selector = {
