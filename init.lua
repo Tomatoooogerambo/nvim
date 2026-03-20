@@ -40,3 +40,12 @@ require("dap-go").setup({
     },
   },
 })
+
+require("spring_boot").setup({
+  java_cmd = "java",
+  boot_run = {
+    jvm_args = {
+      "-Dspring.profiles.active=dev",
+    },
+  },
+})

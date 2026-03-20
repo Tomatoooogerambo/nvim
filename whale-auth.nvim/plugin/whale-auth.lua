@@ -1,0 +1,1 @@
+-- whale-auth.nvim autoload (no-op, setup() handles registration)
