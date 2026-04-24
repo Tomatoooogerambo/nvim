@@ -1,18 +1,27 @@
 return {
   {
-    "idr4n/github-monochrome.nvim",
+    "Mofiqul/vscode.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
-  },
-  {
-    "nickkadutskyi/jb.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    opts = {
+      style = "dark",
+      transparent = false,
+      colors = {
+        "nightly",
+        ["bg"] = "#1E1E1E",
+        ["ui.bg"] = "#1E1E1E",
+        ["ui.fg"] = "#D4D4D4",
+        ["syntax.keyword"] = "#569CD6",
+        ["syntax.string"] = "#CE9178",
+        ["syntax.func"] = "#DCDCAA",
+        ["syntax.type"] = "#4EC9B0",
+        ["syntax.comment"] = "#6A9955",
+        ["syntax.variable"] = "#9CDCFE",
+      },
+    },
     config = function()
-      -- require("jb").setup({transparent = true})
-      vim.cmd("colorscheme jb")
+      vim.o.background = "dark"
+      vim.cmd("colorscheme vscode")
     end,
   },
   {
