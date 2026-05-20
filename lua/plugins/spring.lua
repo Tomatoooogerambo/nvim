@@ -1,24 +1,36 @@
 return {
-  -- {
-  --   "elmcgill/springboot-nvim",
-  --   dependencies = {
-  --     "neovim/nvim-lspconfig",
-  --     "mfussenegger/nvim-jdtls",
-  --   },
-  --   config = function()
-  --     local springboot_nvim = require("springboot-nvim")
-  --     vim.keymap.set("n", "<leader>Jr", springboot_nvim.boot_run, { desc = "Spring Boot Run Project" })
-  --     vim.keymap.set("n", "<leader>Jc", springboot_nvim.generate_class, { desc = "Java Create Class" })
-  --     vim.keymap.set("n", "<leader>Ji", springboot_nvim.generate_interface, { desc = "Java Create Interface" })
-  --     vim.keymap.set("n", "<leader>Je", springboot_nvim.generate_enum, { desc = "Java Create Enum" })
-  --     springboot_nvim.setup({})
-  --   end,
-  -- },
+  -- nvim-java: 只在打开 Java 文件时加载，失败不崩溃
   {
     "nvim-java/nvim-java",
+    ft = "java",
     config = function()
-      require("java").setup()
-      vim.lsp.enable("jdtls")
+      local ok, err = pcall(function()
+        require("java").setup()
+        vim.lsp.enable("jdtls")
+      end)
+      if not ok then
+        vim.notify("[nvim-java] 启动失败，Java LSP 不可用: " .. tostring(err), vim.log.levels.WARN)
+      end
+    end,
+  },
+  -- spring-boot.nvim: 同样加错误保护
+  {
+    "JavaHello/spring-boot.nvim",
+    ft = "java",
+    config = function()
+      local ok, err = pcall(function()
+        require("spring_boot").setup({
+          java_cmd = "java",
+          boot_run = {
+            jvm_args = {
+              "-Dspring.profiles.active=dev",
+            },
+          },
+        })
+      end)
+      if not ok then
+        vim.notify("[spring-boot.nvim] 启动失败: " .. tostring(err), vim.log.levels.WARN)
+      end
     end,
   },
 }
