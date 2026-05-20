@@ -8,7 +8,7 @@ vim.opt.winbar = "%=%m %f"
 vim.g.vimtex_compiler_method = "latexmk"
 vim.g.vimtex_view_zathura_use_synctex = 0
 vim.g.vimtex_quickfix_mode = 0
-vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_method = "skim"
 vim.g.vimtex_compiler_latexmk_engines = {
   _ = "-xelatex", -- 或者使用 '-lualatex'
 }
