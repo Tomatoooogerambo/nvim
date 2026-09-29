@@ -19,8 +19,16 @@ return {
     ft = "java",
     config = function()
       local ok, err = pcall(function()
+        -- 查找 nvim-java 下载的 spring-boot-tools language-server 路径
+        local ls_path = vim.fn.glob(
+          vim.fn.stdpath("data") .. "/nvim-java/packages/spring-boot-tools/*/extension/language-server"
+        )
+        if ls_path == "" then
+          ls_path = nil
+        end
         require("spring_boot").setup({
           java_cmd = "java",
+          ls_path = ls_path,
           boot_run = {
             jvm_args = {
               "-Dspring.profiles.active=dev",
