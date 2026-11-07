@@ -20,7 +20,10 @@ return {
     },
     config = function()
       vim.o.background = "dark"
-      vim.cmd("colorscheme vscode")
+      -- indigo-teal: 与 Hermes 主题同源（~/.hermes/skins/indigo-teal.yaml），
+      -- 配色定义见 ~/.config/nvim/colors/indigo-teal.lua。
+      -- 想切回 vscode：把下面这行改回 vim.cmd("colorscheme vscode")。
+      vim.cmd("colorscheme indigo-teal")
     end,
   },
   {
